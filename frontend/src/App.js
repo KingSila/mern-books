@@ -1,7 +1,11 @@
 import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return <Dashboard />;
+  return (
+    <div className="container">
+      <Dashboard />
+    </div>
+  );
 }
 
 export default App;
