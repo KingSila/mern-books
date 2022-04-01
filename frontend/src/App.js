@@ -1,9 +1,7 @@
-import Dashboard from "./pages/Dashboard";
-
 function App() {
   return (
-    <div className="container">
-      <Dashboard />
+    <div>
+      <h1>My App</h1>
     </div>
   );
 }
