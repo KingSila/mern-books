@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import bookService from "./bookService";
 
 const initialState = {
-  book: [],
+  books: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -12,11 +12,11 @@ const initialState = {
 //Add a new book
 
 export const addBook = createAsyncThunk(
-  "books/addbook",
+  "books/add",
   async (bookData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      console.log(token);
+
       return await bookService.addBook(bookData, token);
     } catch (error) {
       const message =
@@ -44,7 +44,7 @@ export const bookSlice = createSlice({
       .addCase(addBook.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.book.push(action.payload);
+        state.books.push(action.payload);
       })
       .addCase(addBook.rejected, (state, action) => {
         state.isLoading = false;
