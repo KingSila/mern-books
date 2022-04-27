@@ -15,7 +15,10 @@ import {
 import useTable from "../components/useTable";
 
 function Dashboard() {
-  const { TblContainer } = useTable();
+  const headCells = [
+    { id: "bookname", label: "Book" },
+    { id: "author", label: "Author" },
+  ];
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -24,6 +27,8 @@ function Dashboard() {
   const { books, isLoading, isError, message } = useSelector(
     (state) => state.books
   );
+
+  const { TblContainer, TblHead } = useTable(books, headCells);
 
   useEffect(() => {
     if (isError) {
@@ -55,6 +60,7 @@ function Dashboard() {
       <section className="content">
         {books.length > 0 ? (
           <TblContainer>
+            <TblHead />
             <TableBody>
               {books.map((book) => (
                 <TableRow key={book.id}>
