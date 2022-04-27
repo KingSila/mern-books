@@ -5,8 +5,18 @@ import BookForm from "../components/BookForm";
 import Spinner from "../components/Spinner";
 import { reset, getBooks } from "../features/books/bookSlice";
 import BookItem from "../components/BookItem";
+import {
+  TableBody,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+} from "@material-ui/core";
+import useTable from "../components/useTable";
 
 function Dashboard() {
+  const { TblContainer } = useTable();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -41,15 +51,21 @@ function Dashboard() {
         <p>Books Dashboard</p>
       </section>
       <BookForm />
+
       <section className="content">
         {books.length > 0 ? (
-          <div className="books">
-            {books.map((book) => (
-              <BookItem key={book.id} book={book} />
-            ))}
-          </div>
+          <TblContainer>
+            <TableBody>
+              {books.map((book) => (
+                <TableRow key={book.id}>
+                  <TableCell>{book.title}</TableCell>
+                  <TableCell>{book.author}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </TblContainer>
         ) : (
-          <h3>You have no Books</h3>
+          <h3>You have not Books</h3>
         )}
       </section>
     </>

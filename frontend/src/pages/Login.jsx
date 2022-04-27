@@ -47,7 +47,7 @@ function Login() {
       email,
       password,
     };
-    console.log(userData);
+    //console.log(userData);
     dispatch(login(userData));
   };
 

@@ -1,0 +1,35 @@
+{
+  "defaultSubscription": [
+    {
+      "SimSwapDate": "null",
+      "FraudLock": "false",
+      "profileId": "'ZA115710'"
+    },
+
+    {
+      "SimSwapDate": "null",
+      "FraudLock": "false",
+      "profileId": "'ZA119876'"
+    },
+
+    {
+      "SimSwapDate": "null",
+      "FraudLock": "false",
+      "profileId": "'ZA87655'"
+    }
+  ],
+  "subscriptions": [
+    {
+      "profileId": "'ZA115710'",
+      "subscriptionId": "'testusername'",
+      "type": "0",
+      "alias": null
+    },
+    {
+      "profileId": "'ZA87655'",
+      "subscriptionId": "'king@gmail.com'",
+      "type": "0",
+      "alias": null
+    }
+  ]
+}
