@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteBook } from "../features/books/bookSlice";
+import { deleteBook, updateBook } from "../features/books/bookSlice";
 
 function BookItem({ book }) {
   const dispatch = useDispatch();
