@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import BookForm from "../components/BookForm";
 import BookItem from "../components/BookItem";
 import Spinner from "../components/Spinner";
-import { reset, getBooks } from "../features/books/bookSlice";
+import { reset, getBooks, updateBook } from "../features/books/bookSlice";
 
 function Dashboard() {
   const { user } = useSelector((state) => state.auth);
